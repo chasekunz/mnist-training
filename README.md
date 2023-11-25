@@ -2,18 +2,18 @@
 # MNIST Training Project
 
 ## Introduction
-This repository contains a machine learning project for training a Convolutional Neural Network (CNN) on the MNIST dataset using PyTorch. The project is containerized using Docker, which provides the necessary environment but does not include the code or data. These will be mounted into the Docker container when running it.
+Welcome to the MNIST Training Project! This repository is dedicated to exploring and comparing different neural network architectures, including CNNs (Convolutional Neural Networks), DNNs (Deep Neural Networks), and a pre-trained ResNet model adapted using transfer learning, all using the classic MNIST dataset. The project is containerized with Docker to provide a consistent and reproducible environment for running experiments.
 
 ## Prerequisites
-- Docker (with GPU support if using an NVIDIA GPU)
+- Docker (GPU support required for NVIDIA GPUs)
 - Git (for version control)
 
 ## Getting Started
 
 ### Clone the Repository
-First, clone this repository to your local machine using Git:
+To begin, clone this repository to your local machine:
 ```bash
-git clone https://github.com/your-username/mnist-training.git
+git clone https://github.com/chasekunz/mnist-training.git
 cd mnist-training
 ```
 
@@ -29,19 +29,19 @@ Run the Docker container, mounting the code and data directories:
 ```bash
 docker run --gpus all -p 8888:8888 -v $(pwd):/usr/src/app mnist-training
 ```
-This command mounts your current directory (`$(pwd)`) to `/usr/src/app` in the container, allowing the container to access and run your code, and use your data. It also forwards port 8888 from the container to port 8888 on your local machine, allowing you to access the Jupyter notebook server running in the container.
+This mounts the current directory to `/usr/src/app` in the container and forwards port 8888 for Jupyter notebook access.
 
 ## Project Structure
-- `src/`: Contains the Python scripts for training the model.
-- `models/`: Contains the CNN model architecture.
-- `notebooks/`: Jupyter notebooks for data exploration.
-- `data/`: Data directory for MNIST dataset.
-- `tests/`: Unit and integration tests for the project.
-- `Dockerfile`: Dockerfile for setting up the container environment.
-- `requirements.txt`: Python dependencies for the project.
+- `notebooks/`: Jupyter notebooks for model comparison and data exploration.
+- `data/`: Directory for the MNIST dataset.
+- `Dockerfile`: Defines the Docker container environment.
+- `requirements.txt`: Lists dependencies for the project.
+
+## Exploring the Notebooks
+The highlight of this repository is the Jupyter notebooks found in the `notebooks/` directory. Here, you'll find detailed and beginner-friendly notebooks that walk you through the process of training and evaluating various neural network models on the MNIST dataset.
 
 ## Contributing
-Contributions to this project are welcome! Please fork the repository and submit a pull request with your changes.
+We encourage contributions! Please fork the repository and submit pull requests with your enhancements.
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+This project is open-sourced under the [MIT License](LICENSE).
